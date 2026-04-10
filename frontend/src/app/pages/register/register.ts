@@ -6,7 +6,8 @@ import { AuthService } from '../../services/auth.service';
 const ERROR_MAP: Record<string, string> = {
   'all fields are required': 'กรุณากรอกข้อมูลให้ครบ',
   'username must be at least 3 characters': 'ชื่อผู้ใช้ต้องมีอย่างน้อย 3 ตัวอักษร',
-  'password must be at least 4 characters': 'รหัสผ่านต้องมีอย่างน้อย 4 ตัวอักษร',
+  'password must be at least 8 characters': 'รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร',
+  'password must contain at least one uppercase and one lowercase letter': 'รหัสผ่านต้องมีตัวพิมพ์ใหญ่และตัวพิมพ์เล็กอย่างละอย่างน้อย 1 ตัว',
   'username already exists': 'ชื่อผู้ใช้นี้มีผู้ใช้งานแล้ว',
 };
 
@@ -35,6 +36,18 @@ export class Register {
 
     if (!this.username || !this.password || !this.confirmPassword) {
       this.error.set('กรุณากรอกข้อมูลให้ครบ');
+      return;
+    }
+    if (this.password.length < 8) {
+      this.error.set('รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร');
+      return;
+    }
+    if (!/[A-Z]/.test(this.password)) {
+      this.error.set('รหัสผ่านต้องมีตัวพิมพ์ใหญ่อย่างน้อย 1 ตัว');
+      return;
+    }
+    if (!/[a-z]/.test(this.password)) {
+      this.error.set('รหัสผ่านต้องมีตัวพิมพ์เล็กอย่างน้อย 1 ตัว');
       return;
     }
     if (this.password !== this.confirmPassword) {
