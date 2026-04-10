@@ -135,6 +135,9 @@ npm start
 
 ## Show Case
 
+### Database
+<img width="448" height="191" alt="image" src="https://github.com/user-attachments/assets/4b7dfd91-38ed-476e-b559-238902348c7f" />
+
 ### 1. login
 <img width="720" height="576" alt="Screenshot 2026-04-10 193741" src="https://github.com/user-attachments/assets/e4808eb4-7cd3-42f5-bee5-074f270c413a" /> 
 <img width="720" height="576" alt="Screenshot 2026-04-10 193751" src="https://github.com/user-attachments/assets/04c285b1-7020-4c03-b074-4a4db4a4fea9" />
