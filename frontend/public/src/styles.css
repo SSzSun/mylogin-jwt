@@ -1,0 +1,14 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-persimmon-50:  #fff3ee;
+  --color-persimmon-100: #ffe4d4;
+  --color-persimmon-200: #ffc4a4;
+  --color-persimmon-300: #ff9a6a;
+  --color-persimmon-400: #ff6d31;
+  --color-persimmon-500: #ec5800;
+  --color-persimmon-600: #cc4a00;
+  --color-persimmon-700: #a33b00;
+  --color-persimmon-800: #7a2c00;
+  --color-persimmon-900: #521e00;
+}
