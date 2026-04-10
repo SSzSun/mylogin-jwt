@@ -1,0 +1,35 @@
+<div class="min-h-screen bg-persimmon-50 flex items-center justify-center p-4">
+  <div class="w-full max-w-sm">
+    <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+      <!-- Header -->
+      <div class="bg-linear-to-br from-persimmon-500 to-persimmon-700 px-8 pt-8 pb-7 text-center">
+        <div
+          class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-md"
+        >
+          <span class="text-persimmon-500 text-2xl font-bold uppercase">
+            {{ username() ? username()[0] : '?' }}
+          </span>
+        </div>
+        <h1 class="text-white text-xl font-semibold tracking-wide">
+          {{ username() || 'กำลังโหลด...' }}
+        </h1>
+        <p class="text-persimmon-100 text-xs mt-1">Logged in successfully</p>
+      </div>
+
+      <!-- Content -->
+      <div class="px-8 py-7">
+        <div class="bg-persimmon-50 border border-persimmon-100 rounded-xl px-5 py-4 mb-6">
+          <p class="text-xs text-gray-400 mb-0.5">ยินดีต้อนรับ</p>
+          <p class="text-sm font-semibold text-gray-700">{{ username() || '...' }}</p>
+        </div>
+
+        <button
+          (click)="logout()"
+          class="w-full border border-persimmon-200 text-persimmon-500 hover:bg-persimmon-500 hover:text-white font-medium text-sm py-2.5 rounded-lg transition-all duration-150"
+        >
+          ออกจากระบบ
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
