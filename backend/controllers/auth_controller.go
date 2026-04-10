@@ -3,6 +3,7 @@ package controllers
 import (
 	"net/http"
 	"strings"
+	"unicode"
 
 	"backend/config"
 	"backend/models"
@@ -33,8 +34,21 @@ func Register(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "username must be at least 3 characters"})
 		return
 	}
-	if len(input.Password) < 4 {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "password must be at least 4 characters"})
+	if len(input.Password) < 8 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "password must be at least 8 characters"})
+		return
+	}
+	var hasUpper, hasLower bool
+	for _, ch := range input.Password {
+		if unicode.IsUpper(ch) {
+			hasUpper = true
+		}
+		if unicode.IsLower(ch) {
+			hasLower = true
+		}
+	}
+	if !hasUpper || !hasLower {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "password must contain at least one uppercase and one lowercase letter"})
 		return
 	}
 
