@@ -1,0 +1,13 @@
+# ===========================
+# Environment & Secrets
+# ===========================
+.env
+.env.*
+!.env.example
+
+# ===========================
+# Angular (Frontend)
+# ===========================
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/cache/
